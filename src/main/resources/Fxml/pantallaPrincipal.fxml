@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.stage.*?>
+
+<Stage xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.animu.Controller">
+
+  <scene>
+    <Scene>
+      <AnchorPane prefHeight="390.0" prefWidth="550.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+               <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Imagenes/pantallaPrincipal.jpg" />
+                  </image>
+               </ImageView>
+               <Label layoutX="196.0" layoutY="14.0" text="Bienvenido a Animu">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+            </children></AnchorPane>
+    </Scene>
+  </scene>
+</Stage>

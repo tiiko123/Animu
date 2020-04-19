@@ -22,4 +22,15 @@ public class App extends Application {
         stage =(Stage) FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         stage.show();
     }
+
+    public void pantallaPrincipal(){
+        try{
+            Stage op = FXMLLoader.load(getClass().getResource("/fxml/pantallaPrincipal.fxml"));
+            op.show();
+        }catch (Exception e){
+            System.out.println("Error al entrar en la pantalla principal");
+        }
+    }
+
+
 }
