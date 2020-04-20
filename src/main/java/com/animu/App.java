@@ -22,6 +22,19 @@ public class App extends Application {
 
         System.out.println("1 Tiiko");
 
+        System.out.println("0000000sasadasdsdxcv");
+        int a=0;
+        switch (a){
+            case 0: {
+                if (a == 0){
+                    a=0;
+                }
+            }
+                break;
+        }
+        System.out.println(a);
+
+
     }
 
     @Override
