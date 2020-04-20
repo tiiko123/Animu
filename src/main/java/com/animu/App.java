@@ -20,6 +20,8 @@ public class App extends Application {
         System.out.println(" ");
         System.out.println("Funciona");
 
+        System.out.println("1 Tiiko");
+
     }
 
     @Override
