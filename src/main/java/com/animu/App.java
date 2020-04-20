@@ -15,6 +15,11 @@ public class App extends Application {
         System.out.println( "Hello World!" );
         System.out.println("Nuevo commit");
         launch(args);
+
+        System.out.println("Prueba git");
+        System.out.println(" ");
+        System.out.println("Funciona");
+
     }
 
     @Override
