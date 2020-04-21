@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class CargarArchivos {
+public class Archivos {
 
 
 
@@ -75,5 +75,15 @@ public class CargarArchivos {
             cuentas.add(new Cuentas(usuario,password,intentos));
         }
         return cuentas;
+    }
+
+    public void registrarCuenta(ArrayList<Cuentas> cuentas) throws IOException {
+        URL ruta;
+        ruta = getClass().getResource("/Txt/Cuentas.txt");
+        BufferedWriter bf = new BufferedWriter(new FileWriter(String.valueOf(ruta).substring(6,String.valueOf(ruta).length())));
+        for(int i = 0; i < cuentas.size();i++){
+            bf.write(cuentas.get(i).getUsuario()+"#"+cuentas.get(i).getPassword()+"$"+cuentas.get(i).getIntentos()+"\n");
+        }
+        bf.close();
     }
 }

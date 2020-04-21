@@ -1,5 +1,6 @@
 package com.animu;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,14 +10,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-import javax.management.loading.MLetContent;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Controller {
 
     App app = new App();
-    CargarArchivos cargarArchivos = new CargarArchivos();
+    Archivos archivos = new Archivos();
     ArrayList<Cuentas> cuentas = new ArrayList<>();
 
     //login
@@ -25,17 +25,25 @@ public class Controller {
     @FXML
     PasswordField password;
     @FXML
-    Button botonIngresar;
+    Button botonIngresar,botonRegistrarse;
+
+    //Registro
+    @FXML
+    Button botonVolverRegistro;
+    @FXML
+    TextField nuevoUsuario;
+    @FXML
+    PasswordField nuevoPassword,confirmarNuevoPassword;
 
     //Extras
     @FXML
-    Label mensajeDeError;
+    Label mensajeDeErrorLogin;
 
 
+    //************************ login
 
-    //////////////////Login
     public void ingresar() throws IOException {
-        cuentas = cargarArchivos.cargarCuentas();
+        cuentas = archivos.cargarCuentas();
         for(int i = 0; i < cuentas.size(); i++){
             if(usuario.getText().equals(cuentas.get(i).getUsuario())){
                 if(password.getText().equals(cuentas.get(i).getPassword())){
@@ -53,7 +61,7 @@ public class Controller {
 
     public void presionarEnter(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
-            cuentas = cargarArchivos.cargarCuentas();
+            cuentas = archivos.cargarCuentas();
             for(int i = 0; i < cuentas.size(); i++){
                 if(usuario.getText().equals(cuentas.get(i).getUsuario())){
                     if(password.getText().equals(cuentas.get(i).getPassword())){
@@ -69,11 +77,50 @@ public class Controller {
             }
         }
     }
-    //////////////////
 
-    public void mensajeDeError(){
-        mensajeDeError.setText("Usuario o contraseña no validos");
+    public void irARegistro(ActionEvent actionEvent) {
+        app.registro();
+        Stage stage = (Stage)this.botonRegistrarse.getScene().getWindow();
+        stage.close();
     }
+
+    //************************ login//
+
+    //************************ registro
+
+    public void registrarse() throws IOException {
+
+        if(!nuevoUsuario.getText().equals("") && !nuevoPassword.getText().equals("") && !confirmarNuevoPassword.getText().equals("")){
+            cuentas = archivos.cargarCuentas();
+            for(int i = 0; i < cuentas.size(); i++) {
+                if(!cuentas.get(i).getUsuario().equals(nuevoUsuario.getText())){
+
+                }
+
+            }
+        }else{
+            System.out.println("Todo mal");
+        }
+    }
+
+    public void volverRegistro(){
+        app.login();
+        Stage stage = (Stage)this.botonVolverRegistro.getScene().getWindow();
+        stage.close();
+    }
+
+
+
+
+
+
+    //////////////////Extras
+    public void mensajeDeError(){
+        mensajeDeErrorLogin.setText("Usuario o contraseña no validos");
+    }
+
+
+    //////////////////
 
 
 }

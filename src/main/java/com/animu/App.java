@@ -23,12 +23,30 @@ public class App extends Application {
         stage.show();
     }
 
+    public void login(){
+        try{
+            Stage op = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+            op.show();
+        }catch (Exception e){
+            System.out.println("Error al entrar en el login");
+        }
+    }
+
     public void pantallaPrincipal(){
         try{
             Stage op = FXMLLoader.load(getClass().getResource("/fxml/pantallaPrincipal.fxml"));
             op.show();
         }catch (Exception e){
             System.out.println("Error al entrar en la pantalla principal");
+        }
+    }
+
+    public void registro(){
+        try{
+            Stage op = FXMLLoader.load(getClass().getResource("/fxml/registro.fxml"));
+            op.show();
+        }catch (Exception e){
+            System.out.println("Error al entrar en registro");
         }
     }
 
