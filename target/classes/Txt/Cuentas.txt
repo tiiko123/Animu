@@ -5,4 +5,9 @@ aa#sd$
 a#a$
 asd#a$
 f#f$
+<<<<<<< HEAD
 oli#oli$
+=======
+Pablo#testeo123$
+Nuevo#newuser123$
+>>>>>>> e64c49af2971c584f2194005c23a4d85675ad7cb
