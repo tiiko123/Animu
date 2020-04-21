@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,11 +30,15 @@ public class Controller {
 
     //Registro
     @FXML
-    Button botonVolverRegistro;
+    Button botonVolverRegistro,botonRegistrarseRegistro;
     @FXML
     TextField nuevoUsuario;
     @FXML
     PasswordField nuevoPassword,confirmarNuevoPassword;
+
+    //Registro Correctamente
+    @FXML
+    AnchorPane anchorPaneRegistroCorrectamente;
 
     boolean ningunaCoincidencia=false;
 
@@ -61,7 +66,7 @@ public class Controller {
         }
     }
 
-    public void presionarEnter(KeyEvent keyEvent) throws IOException {
+    public void presionarEnterLogin(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             cuentas = archivos.cargarCuentas();
             for(int i = 0; i < cuentas.size(); i++){
@@ -98,20 +103,51 @@ public class Controller {
                 if(cuentas.get(i).getUsuario().equals(nuevoUsuario.getText())){
                     ningunaCoincidencia=true;
                     mensajeDeErrorRegistro.setText("Usuario ya registrado");
-
                 }
             }
             if(ningunaCoincidencia==false){
                 cuentas.add(new Cuentas(nuevoUsuario.getText(),nuevoPassword.getText()));
                 archivos.registrarCuenta(cuentas);
-                app.login();
+                app.registroCorrectamente();
+                Stage stage = (Stage)this.botonRegistrarseRegistro.getScene().getWindow();
+                stage.close();
             }
             ningunaCoincidencia=false;
         }else{
-            System.out.println("Todo mal");
+            mensajeDeErrorRegistro.setText("Revisar datos correctamente");
         }
+    }
 
+    public void presionarEnterRegistro(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            cuentas = archivos.cargarCuentas();
+            if(!nuevoUsuario.getText().equals("") && !nuevoPassword.getText().equals("") && !confirmarNuevoPassword.getText().equals("") && nuevoPassword.getText().equals(confirmarNuevoPassword.getText())){
+                for(int i = 0; i < cuentas.size(); i++) {
+                    if(cuentas.get(i).getUsuario().equals(nuevoUsuario.getText())){
+                        ningunaCoincidencia=true;
+                        mensajeDeErrorRegistro.setText("Usuario ya registrado");
+                    }
+                }
+                if(ningunaCoincidencia==false){
+                    cuentas.add(new Cuentas(nuevoUsuario.getText(),nuevoPassword.getText()));
+                    archivos.registrarCuenta(cuentas);
+                    app.registroCorrectamente();
+                    Stage stage = (Stage)this.botonRegistrarseRegistro.getScene().getWindow();
+                    stage.close();
+                }
+                ningunaCoincidencia=false;
+            }else{
+                mensajeDeErrorRegistro.setText("Revisar datos correctamente");
+            }
+        }
+    }
 
+    public void ventanaRegistroCorrectamente() throws InterruptedException {
+        Thread mith = null;
+        mith.sleep(1000);
+        app.login();
+        Stage stage = (Stage)this.anchorPaneRegistroCorrectamente.getScene().getWindow();
+        stage.close();
     }
 
     public void volverRegistro(){

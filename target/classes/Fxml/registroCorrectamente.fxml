@@ -11,17 +11,18 @@
 
   <scene>
     <Scene>
-      <AnchorPane prefHeight="390.0" prefWidth="550.0" style="-fx-background-color: #FFFFFF;">
+      <AnchorPane fx:id="anchorPaneRegistroCorrectamente" onMouseClicked="#oli" onMouseEntered="#oli" onMouseMoved="#oli" prefHeight="322.0" prefWidth="548.0" style="-fx-background-color: #f6f3ec;">
             <children>
-               <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="400.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Imagenes/registro.jpg" />
+                     <Image url="@../Imagenes/registroCorrectamente.jpg" />
                   </image>
                </ImageView>
-               <Label layoutX="196.0" layoutY="14.0" text="Bienvenido a Animu">
+               <Label layoutX="309.0" layoutY="148.0" text="Registrado Correctamente">
                   <font>
                      <Font size="18.0" />
                   </font></Label>
+               <Label layoutX="368.0" layoutY="291.0" text="Para salir solo mueva su mouse" />
             </children></AnchorPane>
     </Scene>
   </scene>

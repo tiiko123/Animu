@@ -15,7 +15,7 @@
             <children>
                <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Imagenes/pantallaPrincipal.jpg" />
+                     <Image url="@../Imagenes/registro.jpg" />
                   </image>
                </ImageView>
                <Label layoutX="196.0" layoutY="14.0" text="Bienvenido a Animu">

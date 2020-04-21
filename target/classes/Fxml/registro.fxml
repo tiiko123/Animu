@@ -15,7 +15,7 @@
             <children>
                <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Imagenes/pantallaPrincipal.jpg" />
+                     <Image url="@../Imagenes/registro.jpg" />
                   </image>
                </ImageView>
                <Label layoutX="250.0" layoutY="14.0" text="Registro">
@@ -23,12 +23,12 @@
                      <Font size="18.0" />
                   </font></Label>
                <Label layoutX="316.0" layoutY="82.0" text="Usuario" />
-               <TextField fx:id="nuevoUsuario" layoutX="316.0" layoutY="113.0" />
+               <TextField fx:id="nuevoUsuario" layoutX="316.0" layoutY="113.0" onKeyPressed="#presionarEnterRegistro" />
                <Label layoutX="316.0" layoutY="153.0" text="Contraseña" />
-               <PasswordField fx:id="nuevoPassword" layoutX="316.0" layoutY="181.0" />
+               <PasswordField fx:id="nuevoPassword" layoutX="316.0" layoutY="181.0" onKeyPressed="#presionarEnterRegistro" />
                <Label layoutX="316.0" layoutY="221.0" text="Confirmar Contraseña" />
-               <PasswordField fx:id="confirmarNuevoPassword" layoutX="316.0" layoutY="249.0" />
-               <Button layoutX="390.0" layoutY="349.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: #000000;" text="Registrarse" textFill="WHITE" />
+               <PasswordField fx:id="confirmarNuevoPassword" layoutX="316.0" layoutY="249.0" onKeyPressed="#presionarEnterRegistro" />
+               <Button fx:id="botonRegistrarseRegistro" layoutX="390.0" layoutY="349.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: #000000;" text="Registrarse" textFill="WHITE" />
                <Button fx:id="botonVolverRegistro" layoutX="320.0" layoutY="349.0" mnemonicParsing="false" onAction="#volverRegistro" style="-fx-background-color: #000000;" text="Volver" textFill="WHITE" />
                <Label fx:id="mensajeDeErrorRegistro" layoutX="316.0" layoutY="289.0" prefHeight="17.0" prefWidth="149.0" textFill="RED" />
             </children></AnchorPane>

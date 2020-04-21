@@ -1,14 +1,21 @@
 tiiko#tiiko1234$
 pablo#pablo123$
 khioya#khioya123$
-aa#sd$
 a#a$
-asd#a$
-f#f$
-<<<<<<< HEAD
-oli#oli$
-oli2#oli2$
-=======
-Pablo#testeo123$
-Nuevo#newuser123$
->>>>>>> e64c49af2971c584f2194005c23a4d85675ad7cb
+w#w$
+r#r$
+l#l$
+p#p$
+s#s$
+f#ff$
+d#d$
+o#o$
+g#o$
+c#c$
+h#l$
+4#f$
+0#o$
+n#n$
+b#b$
+k#p$
+v#b$

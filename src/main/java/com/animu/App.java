@@ -50,5 +50,14 @@ public class App extends Application {
         }
     }
 
+    public void registroCorrectamente(){
+        try{
+            Stage op = FXMLLoader.load(getClass().getResource("/fxml/registroCorrectamente.fxml"));
+            op.show();
+        }catch (Exception e){
+            System.out.println("Error al entrar en registro Correctamente");
+        }
+    }
+
 
 }
