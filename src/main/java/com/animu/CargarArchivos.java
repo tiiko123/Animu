@@ -8,8 +8,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class CargarArchivos {
@@ -23,12 +24,9 @@ public class CargarArchivos {
 
 
         if(seleccion==JFileChooser.APPROVE_OPTION){
-            System.out.println("Entra 1");
             File fichero=fc.getSelectedFile();
 
             try (FileInputStream file = new FileInputStream(new File(fichero.getAbsolutePath()))) {
-                System.out.println("Entra 2");
-
                 XSSFWorkbook worbook = new XSSFWorkbook(file);
                 XSSFSheet sheet = worbook.getSheetAt(0);
                 Iterator<Row> rowIterator = sheet.iterator();
@@ -41,11 +39,12 @@ public class CargarArchivos {
                     Cell cell;
 
                     while (cellIterator.hasNext()) {
+                        cell = cellIterator.next();
                         try{
-                            cell = cellIterator.next();
+
                             System.out.println(cell.getStringCellValue());
                         }catch (Exception e){
-                            cell = cellIterator.next();
+
                             System.out.println(cell.getNumericCellValue());
                             System.out.println("no imprimio nada");
                         }
@@ -60,5 +59,21 @@ public class CargarArchivos {
             }
 
         }
+    }
+
+    public ArrayList<Cuentas>  cargarCuentas() throws IOException {
+        URL ruta;
+        String usuario,password,intentos;
+        ArrayList<Cuentas> cuentas = new ArrayList<>();
+        ruta = getClass().getResource("/Txt/Cuentas.txt");
+        BufferedReader bf = new BufferedReader(new FileReader(String.valueOf(ruta).substring(6,String.valueOf(ruta).length())));
+        String bfRead;
+        while((bfRead = bf.readLine())!= null){
+            usuario = bfRead.substring(bfRead.indexOf(""),bfRead.indexOf("#"));
+            password = bfRead.substring(bfRead.indexOf("#")+1,bfRead.indexOf("$"));
+            intentos = bfRead.substring(bfRead.indexOf("$")+1,bfRead.length());
+            cuentas.add(new Cuentas(usuario,password,intentos));
+        }
+        return cuentas;
     }
 }

@@ -14,15 +14,17 @@
             <children>
                <Label layoutX="39.0" layoutY="72.0" text="Usuario" />
                <Label layoutX="39.0" layoutY="137.0" text="Contraseña" />
-               <TextField layoutX="39.0" layoutY="97.0" />
-               <TextField layoutX="39.0" layoutY="165.0" />
-               <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="275.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <TextField fx:id="usuario" layoutX="39.0" layoutY="97.0" onKeyPressed="#presionarEnter" />
+                <PasswordField fx:id="password" layoutX="39.0" layoutY="167.0" onKeyPressed="#presionarEnter" />
+
+                <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="275.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../Imagenes/loginImagen.jpg" />
                   </image>
                </ImageView>
-               <Button layoutX="34.0" layoutY="354.0" mnemonicParsing="false" onAction="#ingresar" prefWidth="75.0" text="Ingresar" />
+               <Button fx:id="botonIngresar" layoutX="34.0" layoutY="354.0" mnemonicParsing="false" onAction="#ingresar" prefWidth="75.0" text="Ingresar" />
                <Button layoutX="136.0" layoutY="354.0" mnemonicParsing="false" text="Registrarse" />
+               <Label fx:id="mensajeDeError" layoutX="39.0" layoutY="228.0" prefHeight="17.0" prefWidth="210.0" textFill="RED" />
             </children></AnchorPane>
     </Scene>
   </scene>

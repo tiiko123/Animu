@@ -12,29 +12,9 @@ public class App extends Application {
 
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println("Hello World!" );
         System.out.println("Nuevo commit");
         launch(args);
-
-        System.out.println("Prueba git");
-        System.out.println(" ");
-        System.out.println("Funciona");
-
-        System.out.println("1 Tiiko");
-
-        System.out.println("0000000sasadasdsdxcv");
-        int a=0;
-        switch (a){
-            case 0: {
-                if (a == 0){
-                    a=0;
-                }
-            }
-                break;
-        }
-        System.out.println(a);
-
-
     }
 
     @Override
