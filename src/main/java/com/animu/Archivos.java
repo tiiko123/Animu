@@ -67,22 +67,30 @@ public class Archivos {
         ArrayList<Cuentas> cuentas = new ArrayList<>();
         ruta = getClass().getResource("/Txt/Cuentas.txt");
         BufferedReader bf = new BufferedReader(new FileReader(String.valueOf(ruta).substring(6,String.valueOf(ruta).length())));
+        System.out.println("ruta: "+ruta);
         String bfRead;
         while((bfRead = bf.readLine())!= null){
             usuario = bfRead.substring(bfRead.indexOf(""),bfRead.indexOf("#"));
             password = bfRead.substring(bfRead.indexOf("#")+1,bfRead.indexOf("$"));
-            intentos = bfRead.substring(bfRead.indexOf("$")+1,bfRead.length());
-            cuentas.add(new Cuentas(usuario,password,intentos));
+            cuentas.add(new Cuentas(usuario,password));
         }
         return cuentas;
     }
 
     public void registrarCuenta(ArrayList<Cuentas> cuentas) throws IOException {
-        URL ruta;
-        ruta = getClass().getResource("/Txt/Cuentas.txt");
-        BufferedWriter bf = new BufferedWriter(new FileWriter(String.valueOf(ruta).substring(6,String.valueOf(ruta).length())));
+
+        for(int i = 0;i < cuentas.size(); i++){
+            System.out.println(cuentas.get(i).getUsuario()+cuentas.get(i).getPassword());
+        }
+        File f = new File("Cuentas.txt");
+        System.out.println("Completa del path: "+f.getAbsolutePath());
+        System.out.println("Como es: "+f.getAbsolutePath().substring(0,f.getAbsolutePath().indexOf("Cuentas"))+"src\\main\\resources\\Txt\\Cuentas.txt");
+        System.out.println("Como deberia: "+"C:\\Users\\fran1\\Desktop\\Git\\Animu\\src\\main\\resources\\Txt\\Cuentas.txt");
+
+        BufferedWriter bf = new BufferedWriter(new FileWriter(f.getAbsolutePath().substring(0,f.getAbsolutePath().indexOf("Cuentas"))+"src\\main\\resources\\Txt\\Cuentas.txt"));
         for(int i = 0; i < cuentas.size();i++){
-            bf.write(cuentas.get(i).getUsuario()+"#"+cuentas.get(i).getPassword()+"$"+cuentas.get(i).getIntentos()+"\n");
+            System.out.println(cuentas.get(i).getUsuario()+cuentas.get(i).getPassword());
+            bf.write(cuentas.get(i).getUsuario()+"#"+cuentas.get(i).getPassword()+"$"+"\n");
         }
         bf.close();
     }

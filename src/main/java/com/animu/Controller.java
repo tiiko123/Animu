@@ -35,9 +35,11 @@ public class Controller {
     @FXML
     PasswordField nuevoPassword,confirmarNuevoPassword;
 
+    boolean ningunaCoincidencia=false;
+
     //Extras
     @FXML
-    Label mensajeDeErrorLogin;
+    Label mensajeDeErrorLogin,mensajeDeErrorRegistro;
 
 
     //************************ login
@@ -89,18 +91,26 @@ public class Controller {
     //************************ registro
 
     public void registrarse() throws IOException {
+        cuentas = archivos.cargarCuentas();
 
-        if(!nuevoUsuario.getText().equals("") && !nuevoPassword.getText().equals("") && !confirmarNuevoPassword.getText().equals("")){
-            cuentas = archivos.cargarCuentas();
+        if(!nuevoUsuario.getText().equals("") && !nuevoPassword.getText().equals("") && !confirmarNuevoPassword.getText().equals("") && nuevoPassword.getText().equals(confirmarNuevoPassword.getText())){
             for(int i = 0; i < cuentas.size(); i++) {
-                if(!cuentas.get(i).getUsuario().equals(nuevoUsuario.getText())){
+                if(cuentas.get(i).getUsuario().equals(nuevoUsuario.getText())){
+                    ningunaCoincidencia=true;
+                    mensajeDeErrorRegistro.setText("Usuario ya registrado");
 
                 }
-
             }
+            if(ningunaCoincidencia==false){
+                cuentas.add(new Cuentas(nuevoUsuario.getText(),nuevoPassword.getText()));
+                archivos.registrarCuenta(cuentas);
+            }
+            ningunaCoincidencia=false;
         }else{
             System.out.println("Todo mal");
         }
+
+
     }
 
     public void volverRegistro(){

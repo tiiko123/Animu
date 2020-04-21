@@ -24,7 +24,7 @@
                </ImageView>
                <Button fx:id="botonIngresar" layoutX="34.0" layoutY="354.0" mnemonicParsing="false" onAction="#ingresar" prefWidth="75.0" style="-fx-background-color: #000000;" text="Ingresar" textFill="WHITE" />
                <Button fx:id="botonRegistrarse" layoutX="136.0" layoutY="354.0" mnemonicParsing="false" onAction="#irARegistro" style="-fx-background-color: #000000;" text="Registrarse" textFill="WHITE" />
-               <Label fx:id="mensajeDeError" layoutX="39.0" layoutY="228.0" prefHeight="17.0" prefWidth="210.0" textFill="RED" />
+               <Label fx:id="mensajeDeErrorLogin" layoutX="39.0" layoutY="228.0" prefHeight="17.0" prefWidth="210.0" textFill="RED" />
             </children></AnchorPane>
     </Scene>
   </scene>
