@@ -50,14 +50,9 @@ public class Archivos {
                         }
 
                     }
-
-
-
                 }
             } catch (Exception e) {
-
             }
-
         }
     }
 
@@ -65,9 +60,8 @@ public class Archivos {
         URL ruta;
         String usuario,password,intentos;
         ArrayList<Cuentas> cuentas = new ArrayList<>();
-        ruta = getClass().getResource("/Txt/Cuentas.txt");
-        BufferedReader bf = new BufferedReader(new FileReader(String.valueOf(ruta).substring(6,String.valueOf(ruta).length())));
-        System.out.println("ruta: "+ruta);
+        File f = new File("Cuentas.txt");
+        BufferedReader bf = new BufferedReader(new FileReader(f.getAbsolutePath().substring(0,f.getAbsolutePath().indexOf("Cuentas"))+"src\\main\\resources\\Txt\\Cuentas.txt"));
         String bfRead;
         while((bfRead = bf.readLine())!= null){
             usuario = bfRead.substring(bfRead.indexOf(""),bfRead.indexOf("#"));
@@ -83,10 +77,6 @@ public class Archivos {
             System.out.println(cuentas.get(i).getUsuario()+cuentas.get(i).getPassword());
         }
         File f = new File("Cuentas.txt");
-        System.out.println("Completa del path: "+f.getAbsolutePath());
-        System.out.println("Como es: "+f.getAbsolutePath().substring(0,f.getAbsolutePath().indexOf("Cuentas"))+"src\\main\\resources\\Txt\\Cuentas.txt");
-        System.out.println("Como deberia: "+"C:\\Users\\fran1\\Desktop\\Git\\Animu\\src\\main\\resources\\Txt\\Cuentas.txt");
-
         BufferedWriter bf = new BufferedWriter(new FileWriter(f.getAbsolutePath().substring(0,f.getAbsolutePath().indexOf("Cuentas"))+"src\\main\\resources\\Txt\\Cuentas.txt"));
         for(int i = 0; i < cuentas.size();i++){
             System.out.println(cuentas.get(i).getUsuario()+cuentas.get(i).getPassword());

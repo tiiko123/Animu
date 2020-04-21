@@ -104,6 +104,7 @@ public class Controller {
             if(ningunaCoincidencia==false){
                 cuentas.add(new Cuentas(nuevoUsuario.getText(),nuevoPassword.getText()));
                 archivos.registrarCuenta(cuentas);
+                app.login();
             }
             ningunaCoincidencia=false;
         }else{
