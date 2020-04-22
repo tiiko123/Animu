@@ -16,10 +16,10 @@ public class App extends Application {
         System.out.println("Nuevo commit");
         launch(args);
     }
-
+    //Sustituir por login
     @Override
     public void start(Stage stage) throws Exception {
-        stage =(Stage) FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        stage =(Stage) FXMLLoader.load(getClass().getResource("/fxml/pantallaPrincipal.fxml"));
         stage.show();
     }
 
@@ -56,6 +56,15 @@ public class App extends Application {
             op.show();
         }catch (Exception e){
             System.out.println("Error al entrar en registro Correctamente");
+        }
+    }
+
+    public void listaDeAnime(){
+        try{
+            Stage op = FXMLLoader.load(getClass().getResource("/fxml/listaDeAnime.fxml"));
+            op.show();
+        }catch (Exception e){
+            System.out.println("Error al entrar en lista de anime");
         }
     }
 

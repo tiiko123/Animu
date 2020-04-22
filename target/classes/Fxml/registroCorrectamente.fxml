@@ -11,7 +11,7 @@
 
   <scene>
     <Scene>
-      <AnchorPane fx:id="anchorPaneRegistroCorrectamente" onMouseClicked="#oli" onMouseEntered="#oli" onMouseMoved="#oli" prefHeight="322.0" prefWidth="548.0" style="-fx-background-color: #f6f3ec;">
+      <AnchorPane fx:id="anchorPaneRegistroCorrectamente" onMouseClicked="#ventanaRegistroCorrectamente" onMouseEntered="#ventanaRegistroCorrectamente" onMouseMoved="#ventanaRegistroCorrectamente" prefHeight="322.0" prefWidth="548.0" style="-fx-background-color: #f6f3ec;">
             <children>
                <ImageView fitHeight="400.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
                   <image>

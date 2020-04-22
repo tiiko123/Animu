@@ -40,6 +40,10 @@ public class Controller {
     @FXML
     AnchorPane anchorPaneRegistroCorrectamente;
 
+    //Lista de anime
+    @FXML
+    Button botonListaDeAnime;
+
     boolean ningunaCoincidencia=false;
 
     //Extras
@@ -156,11 +160,6 @@ public class Controller {
         stage.close();
     }
 
-
-
-
-
-
     //////////////////Extras
     public void mensajeDeError(){
         mensajeDeErrorLogin.setText("Usuario o contraseña no validos");
@@ -168,6 +167,18 @@ public class Controller {
 
 
     //////////////////
+
+    //************************ registro//
+
+    //************************ pantallaPrincipal
+
+    public void irAListaDeAnime(){
+        app.listaDeAnime();
+        Stage stage = (Stage)this.botonListaDeAnime.getScene().getWindow();
+        stage.close();
+    }
+
+    //************************ pantallaPrincipal//
 
 
 }

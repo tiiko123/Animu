@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.stage.*?>
+
+<Stage xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.animu.Controller">
+
+  <scene>
+    <Scene>
+      <AnchorPane prefHeight="632.0" prefWidth="1182.0" style="-fx-background-color: #f9f2f9;">
+            <children>
+               <ImageView fitHeight="642.0" fitWidth="511.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Imagenes/listaDeAnime.jpg" />
+                  </image>
+               </ImageView>
+               <TableView layoutX="454.0" layoutY="96.0" prefHeight="434.0" prefWidth="693.0">
+                 <columns>
+                   <TableColumn prefWidth="396.0" text="Nombre" />
+                   <TableColumn prefWidth="85.0" text="Genero" />
+                     <TableColumn prefWidth="107.0" text="Capitulos" />
+                     <TableColumn prefWidth="104.0" text="Calificación" />
+                 </columns>
+               </TableView>
+               <Label layoutX="698.0" layoutY="25.0" text="Lista Anime">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="36.0" />
+                  </font>
+               </Label>
+            </children>
+      </AnchorPane>
+    </Scene>
+  </scene>
+</Stage>

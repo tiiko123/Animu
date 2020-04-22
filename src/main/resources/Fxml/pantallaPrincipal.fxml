@@ -11,17 +11,22 @@
 
   <scene>
     <Scene>
-      <AnchorPane prefHeight="390.0" prefWidth="550.0" style="-fx-background-color: #FFFFFF;">
+      <AnchorPane prefHeight="390.0" prefWidth="550.0" style="-fx-background-color: #f5edeb;">
             <children>
-               <ImageView fitHeight="400.0" fitWidth="261.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <Label layoutX="274.0" layoutY="-1.0" prefHeight="391.0" prefWidth="281.0" style="-fx-background-color: #F4C6F7;" textFill="WHITE" />
+               <ImageView fitHeight="391.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../Imagenes/registro.jpg" />
+                     <Image url="@../Imagenes/pantallaPrincipalPrueba2.jpg" />
                   </image>
                </ImageView>
-               <Label layoutX="196.0" layoutY="14.0" text="Bienvenido a Animu">
+               <Label layoutX="336.0" layoutY="14.0" text="Bienvenido a Animu">
                   <font>
-                     <Font size="18.0" />
+                     <Font name="System Bold" size="18.0" />
                   </font></Label>
+               <Button fx:id="botonListaDeAnime" layoutX="315.0" layoutY="136.0" mnemonicParsing="false" onAction="#irAListaDeAnime" prefHeight="49.0" prefWidth="200.0" style="-fx-border-color: #FFFFFF; -fx-background-color: #767676;" text="Lista de anime" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font></Button>
             </children></AnchorPane>
     </Scene>
   </scene>
