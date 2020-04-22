@@ -19,7 +19,7 @@ public class App extends Application {
     //Sustituir por login
     @Override
     public void start(Stage stage) throws Exception {
-        stage =(Stage) FXMLLoader.load(getClass().getResource("/fxml/pantallaPrincipal.fxml"));
+        stage =(Stage) FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         stage.show();
     }
 
